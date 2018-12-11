@@ -10,18 +10,18 @@ Original repo: https://github.com/DevFactoryCH/imagecache + added watermarks
 
 ## Installation
 
-Using Composer, edit your `composer.json` file to require `devfactory/imagecache`.
+Using Composer, edit your `composer.json` file to require `rik43/imagecache`.
 
 ##### Laravel 5
 
 	"require": {
-		"devfactory/imagecache": "3.0.*"
+		"rik43/imagecache": "3.0.*"
 	}
 
 ##### Laravel 4
 
 	"require": {
-		"devfactory/imagecache": "2.1.*"
+		"rik43/imagecache": "2.1.*"
 	}
 
 Then from the terminal run
@@ -48,7 +48,7 @@ Publish the config:
 
 ##### Laravel 4
 
-    php artisan config:publish devfactory/imagecache
+    php artisan config:publish rik43/imagecache
 
 ## Usage
 
@@ -58,7 +58,7 @@ Define some presets in:
 `config/imagecache.presets.php`
 
 ##### Laravel  4
-`app/config/packages/devfactory/imagecache/presets.php`
+`app/config/packages/rik43/imagecache/presets.php`
 
 ```php
 <?php
