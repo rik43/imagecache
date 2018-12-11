@@ -38,4 +38,18 @@ return array(
    * Served through www.placeholdr.pics
    */
   'use_placeholders' => FALSE,
+
+  /**
+   * Path to watermark file
+   * Watermark add "as is" in image center without any resize
+   * Example: resource_path('data/img/watermark.png')
+   */
+  'watermark_path'  => null,
+
+  /**
+   * Min image size to add watermark
+   * 0 - to add all
+   */
+  'watermark_min_size'  => 450,
+
 );

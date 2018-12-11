@@ -24,7 +24,7 @@ class Imagecache {
   /**
    * The preset sent by the call
    *
-   * @var string
+   * @var \StdClass
    **/
   protected $preset;
 
@@ -113,6 +113,21 @@ class Imagecache {
   protected $request;
 
   /**
+   * Path to watermark
+   *
+   * @var string
+   */
+  protected $watermark_path;
+
+    /**
+     * Min image size to add watermark
+     *
+     * @var string
+     */
+  protected $watermark_min_size;
+
+
+  /**
    * __construct
    *
    * @return void
@@ -129,6 +144,9 @@ class Imagecache {
     $this->filename_field = config('imagecache.config.filename_field');
     $this->quality = config('imagecache.config.quality', 90);
     $this->use_placeholders = config('imagecache.config.use_placeholders', FALSE);
+
+    $this->watermark_path = config('imagecache.config.watermark_path', null);
+    $this->watermark_min_size = config('imagecache.config.watermark_min_size', null);
 
     $this->request = request();
   }
@@ -438,7 +456,18 @@ class Imagecache {
   protected function buildImage () {
     $method = 'buildImage'. ucfirst($this->preset->method);
     if (method_exists($this, $method)) {
-      return $this->{$method}();
+      $image = $this->{$method}();
+
+      // add watermark
+      if ($this->watermark_path
+          && (!isset($this->preset->watermark) || ($this->preset->watermark === true))
+          && ($image->width() > $this->watermark_min_size)
+          && ($image->height() > $this->watermark_min_size)
+      ) {
+        $image->insert($this->watermark_path, 'center');
+      }
+
+      return $image;
     }
 
     return FALSE;

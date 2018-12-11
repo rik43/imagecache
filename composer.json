@@ -1,11 +1,15 @@
 {
-  "name": "devfactory/imagecache",
+  "name": "rik43/imagecache",
   "description": "Laravel package for generating thumbnails of images and caching them in your public files folder.",
   "license": "MIT",
   "authors": [
     {
       "name": "DevFactory Sarl",
       "email": "developer@devfactory.ch"
+    },
+    {
+      "name": "rik43",
+      "email": "rikstudio43@gmail.com"
     }
   ],
   "require": {

@@ -19,6 +19,17 @@
  *        )
  *      ),
  *
+ * disable watermark on one size
+ *      'presets' => array(
+ *        '800x600' => array(
+ *          'width' => 800,
+ *          'height' => 600,
+ *          'method' => 'resize',
+ *          'background_color' => '#000000',
+ *          'watermark' => false, // Add this
+ *        )
+ *      ),
+ *
  */
 return array(
 

@@ -6,6 +6,8 @@
 
 Laravel 4/5 package that allows you to create image thumbnails according to predefined presets, and store them in your Laravel public folder to serve them up without generating them on each page load.
 
+Original repo: https://github.com/DevFactoryCH/imagecache + added watermarks
+
 ## Installation
 
 Using Composer, edit your `composer.json` file to require `devfactory/imagecache`.
