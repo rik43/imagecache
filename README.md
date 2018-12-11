@@ -4,7 +4,7 @@
 
 # Imagecache
 
-Laravel 4/5 package that allows you to create image thumbnails according to predefined presets, and store them in your Laravel public folder to serve them up without generating them on each page load.
+Laravel 5 package that allows you to create image thumbnails according to predefined presets, and store them in your Laravel public folder to serve them up without generating them on each page load.
 
 Original repo: https://github.com/DevFactoryCH/imagecache + added watermarks
 
@@ -16,12 +16,6 @@ Using Composer, edit your `composer.json` file to require `rik43/imagecache`.
 
 	"require": {
 		"rik43/imagecache": "3.0.*"
-	}
-
-##### Laravel 4
-
-	"require": {
-		"rik43/imagecache": "2.1.*"
 	}
 
 Then from the terminal run
@@ -46,19 +40,12 @@ Publish the config:
 
     php artisan vendor:publish
 
-##### Laravel 4
-
-    php artisan config:publish rik43/imagecache
-
 ## Usage
 
 Define some presets in:
 
 ##### Laravel  5
 `config/imagecache.presets.php`
-
-##### Laravel  4
-`app/config/packages/rik43/imagecache/presets.php`
 
 ```php
 <?php
